@@ -40,7 +40,7 @@ router.get("/multiline", (req, res) => {
     // console.log(namecate)
     var sql = `SELECT project.category, YEAR(project.year) AS year, COUNT(project.idProject) AS freq
     FROM project
-    GROUP BY project.category`;
+    GROUP BY project.category, YEAR(project.year)`;
     db.query(sql, function (error, result) {
         if (error) {
             console.log("Error Connecting to DB /multiline");
