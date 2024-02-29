@@ -19,6 +19,8 @@ const dashboard = require('./dashboard')
 const projectAdv = require('./Advisor-server/project-adv')
 const profileAdv = require('./Advisor-server/profile-adv')
 const inviteAdv = require('./Advisor-server/invite-adv')
+
+const port = process.env.PORT || 9002;
 server.use(bodyParser.json());
 
 
@@ -58,7 +60,7 @@ db.connect(function (error) {
 
 //Establish the Port
 
-server.listen(9002, function check(error) {
+server.listen(port, function check(error) {
   if (error) {
     console.log("Error....dddd!!!!");
   }
